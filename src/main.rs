@@ -2,14 +2,41 @@ mod game;
 mod graphics;
 mod input;
 
+enum Song {
+    Mago,
+    Shhh,
+    Default,
+}
+
+impl Song {
+    fn from_choice(choice: &str) -> Self {
+        match choice {
+            "1" => Song::Mago,
+            "2" => Song::Shhh,
+            _=> Self::Default
+        }
+    }
+
+    fn file_name(&self) -> &'static str {
+        match self {
+            Song::Mago => "song_a.mp3",
+            Song::Shhh => "song_b.mp3",
+            Song::Default => "default_song.mp3",
+        }
+    }
+}
+
+
 
 fn main() {
+
     println!("Welcome to Rust Dance Dance Revolution");
 
     println!("Enter your name!");
  
     let mut name= String::new(); // string
     std::io::stdin().read_line(&mut name).unwrap(); // string
+    name = name.trim().to_string();
 
     println!("Hello {}", name);
     println!("Choose a song:");
@@ -51,13 +78,10 @@ fn main() {
         println!("Shhh! - by VIVIZ");
     }
 
-    println!("Match the keys on your keyboard with the ones shown on the screen!")
-    
-    
-    
+    println!("Match the keys on your keyboard with the ones shown on the screen!");
 
+    let selected_song = Song::from_choice(song_choice.trim()).file_name();
 
-
+    game::start_game(name, selected_song);
     
-
 }
