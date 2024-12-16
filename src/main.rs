@@ -19,6 +19,8 @@ fn main() {
     println!("1. Start Race");
     println!("2. View Leaderboard");
     println!("3. Quit");
+    println!("\nIf you do not choose the correct options, the game will quit automatically.");
+
 
     while let GameState::Quit = state {
         match state {

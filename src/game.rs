@@ -40,7 +40,7 @@ pub fn show_main_menu() -> GameState {
         "1" => start_race(),
         "2" => show_leaderboard(),
         "3" => GameState::Quit,
-         &_ => todo!()
+         &_ => GameState::Quit,
     }
 }
 
@@ -113,9 +113,11 @@ pub fn start_race() -> GameState {
 
     save_player_score(history_path, top5_path, &player_name, wpm, accuracy);
 
+    
     println!("\n1. Play Again");
     println!("2. View Leaderboard");
     println!("3. Quit");
+    println!("\nIf you do not choose the correct options, the game will quit automatically.");
     show_main_menu()
 }
 

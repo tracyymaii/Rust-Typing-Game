@@ -98,5 +98,20 @@
     "name": "BattleAxe98012",
     "speed": 62.08668473280825,
     "accuracy": 92.85714285714286
+  },
+  {
+    "name": "tracy",
+    "speed": 5.244864058014361,
+    "accuracy": 40.0
+  },
+  {
+    "name": "bug72",
+    "speed": 65.56268950161235,
+    "accuracy": 90.0
+  },
+  {
+    "name": "treac",
+    "speed": 204.584053905617,
+    "accuracy": 0.0
   }
 ]

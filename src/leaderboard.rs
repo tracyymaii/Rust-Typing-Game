@@ -97,6 +97,8 @@ pub fn show_leaderboard() -> GameState {
     println!("\n1. View Full History");
     println!("2. View Top 5 Leaderboard");
     println!("3. Quit");
+    println!("\nIf you do not choose the correct options, the game will quit automatically.");
+
 
     let choice = read_player_input();
     match choice.as_str() {
@@ -105,7 +107,7 @@ pub fn show_leaderboard() -> GameState {
             println!("\n1. Play Again");
             println!("2. View Leaderboard");
             println!("3. Quit");
-            
+            println!("\nIf you do not choose the correct options, the game will quit automatically.");
             show_main_menu()
         }
         "2" => {
@@ -113,13 +115,11 @@ pub fn show_leaderboard() -> GameState {
             println!("\n1. Play Again");
             println!("2. View Leaderboard");
             println!("3. Quit");
+            println!("\nIf you do not choose the correct options, the game will quit automatically.");
             show_main_menu()
         }
         "3" => GameState::Quit,
-        _ => {
-            println!("Invalid choice.");
-            show_main_menu()
-        }
+        _ => GameState::Quit,
     }
 }
 
