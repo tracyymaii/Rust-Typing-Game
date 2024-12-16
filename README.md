@@ -1,12 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/SHBxUkI4)
-# A Game in Rust
-
-The purpose of this assignment are:
-1. Learn yet another programming language
-2. Practice your creativity
-3. Apply the concepts of Chapter 6: Data Types from the book
-4. Have an original project that you can add to your portfolio
-
 
 # Type Game in Rust
 
