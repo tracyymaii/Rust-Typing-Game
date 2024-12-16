@@ -53,12 +53,49 @@ File Handling:
 Collections:
 - Used vectors for track visualization, sentence generation, and leaderboard storage.
 
+## Difficulties and Solutions
+Challenges
 
-* Description of your Game
-* How to run
-* How to play (You need to show screenshots of the gameplay so a person can learn how to play your game)
-  * A YouTube video showing your program running and explaining how it goes.
-* Data types (How you applied some concepts from the book in your code, you can reference/use the comments you wrote in your code)
-* Difficulties and Solutions (What challenges you found and how you overcame them)
-* The Good, the Bad and the Ugly (What you loved about this experience, what has bad, and what did you disliked)
-* Learning Experience (briefly explain what you learn in this assignment)
+Handling Input:
+
+Issue: Managing user input and ensuring raw mode doesn’t disrupt the terminal.
+
+Solution: Used crossterm for efficient input handling.
+
+Sentence Generation:
+
+Issue: Selecting unique random words from a dictionary file.
+
+Solution: Implemented rand::SliceRandom to choose words efficiently.
+
+Leaderboard Persistence:
+
+Issue: Maintaining data integrity when saving/loading JSON files.
+
+Solution: Leveraged serde for seamless serialization/deserialization.
+
+## The Good, the Bad, and the Ugly
+**The Good**
+
+Engaging Gameplay: Visualizing progress with a moving car made the game interactive and fun.
+
+Learning Rust: Gained hands-on experience with Rust’s enums, structs, and external crates.
+
+**The Bad**
+
+Raw Mode Issues: Debugging raw mode in the terminal was tedious.
+
+**The Ugly**
+
+Error Handling: Initial implementation lacked proper error handling, causing crashes during file I/O.
+
+
+## Learning Experience
+This assignment helped me:
+
+Understand Rust’s ownership model and its implications in file handling and input management.
+
+Learn how to use external crates like crossterm, serde, and rand effectively.
+
+Build a modular and extensible codebase by separating concerns into different modules (e.g., game, graphics, input).
+
