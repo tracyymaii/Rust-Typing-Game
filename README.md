@@ -45,25 +45,23 @@ Collections:
 - Used vectors for track visualization, sentence generation, and leaderboard storage.
 
 ## Difficulties and Solutions
-Challenges
+**Challenges**
 
-Handling Input:
+Creating Live Car Movement:
+- Issue: In the beginnning the car would stay static. Then other issues that I faced was that it would never stop.
 
-Issue: Managing user input and ensuring raw mode doesn’t disrupt the terminal.
-
-Solution: Used crossterm for efficient input handling.
-
-Sentence Generation:
-
-Issue: Selecting unique random words from a dictionary file.
-
-Solution: Implemented rand::SliceRandom to choose words efficiently.
+- Solution: To have the car move as the user typed, I added "termion" into the dependencies, because it allows live tracking. To create a set track for the car to move on, I made it based on the length of the sentence.
 
 Leaderboard Persistence:
+- Issue: It was hard to keep both the history and leaderboard updated. 
 
-Issue: Maintaining data integrity when saving/loading JSON files.
+- Solution: I just worked more carefully to fix it.
 
-Solution: Leveraged serde for seamless serialization/deserialization.
+Rust:
+- Issue: Honestly, learning Rust, the functions, the states, the precise data types; all of it was very hard. I felt like I needed to pay much much MUCH more attention to detail and often felt like I was running in circles.
+
+- Solution: Perseverance :D. I had no choice but to get through it. It was hard, and I changed my gamemany times to make it simpler. However, I perservered since I knew that every struggle that I went to would help me and my learning in the future.
+
 
 ## The Good, the Bad, and the Ugly
 **The Good**
