@@ -83,5 +83,20 @@
     "name": "blah blah blah",
     "speed": 194.85619066741452,
     "accuracy": 0.0
+  },
+  {
+    "name": "megan",
+    "speed": 59.900208667485394,
+    "accuracy": 72.72727272727273
+  },
+  {
+    "name": "flappy78",
+    "speed": 49.306878509858585,
+    "accuracy": 90.9090909090909
+  },
+  {
+    "name": "BattleAxe98012",
+    "speed": 62.08668473280825,
+    "accuracy": 92.85714285714286
   }
 ]
