@@ -1,3 +1,10 @@
+/*
+Title : Type Rust Game
+Purpose: Create a typing game that measures the player's typing speed and accuracy in Rust.
+Author: Tracy Mai
+Date: December 15, 2024
+*/ 
+
 mod game;
 mod graphics;
 mod input;

@@ -1,3 +1,8 @@
+/*
+File : Games.rs
+Purpose: Stores functions related core functions in the game.
+*/ 
+
 use crate::graphics::render_car_position;
 use crate::input::read_player_input;
 use crate::leaderboard::{save_player_score, show_leaderboard};
@@ -5,6 +10,9 @@ use rand::prelude::SliceRandom;
 use std::fs;
 use std::time::Instant;
 
+/*
+Enum to represent the different states of the game.
+*/
 pub enum GameState {
     MainMenu,
     Race,
@@ -12,11 +20,20 @@ pub enum GameState {
     Quit,
 }
 
+/*
+Cross-platform function to read player input.
+*/
 use crossterm::{
     event::{self, Event, KeyCode},
     terminal::{self},
 };
 
+/*
+Show Main Menu
+Displays the main menu and handles player input.
+Params: None
+Returns: GameState - The next state of the game.
+*/
 pub fn show_main_menu() -> GameState {
     let choice = read_player_input();
     match choice.as_str() {
@@ -26,21 +43,25 @@ pub fn show_main_menu() -> GameState {
          &_ => todo!()
     }
 }
+
+/*
+Start Race
+Starts the race game mode and handles player input.
+Params: None
+Returns: GameState - The next state of the game.
+*/
 pub fn start_race() -> GameState {
     let dictionary_path = "src/assets/dictionary.txt";
     let history_path = "src/assets/history.json";
     let top5_path = "src/assets/top5.json";
 
-    // Player input for name
     println!("\nEnter your name:");
     let player_name = read_player_input();
 
-    // Generate the sentence
     let sentence = generate_sentence(dictionary_path, 10);
     println!("\nType the following sentence:");
     println!("{}", sentence);
 
-    // Initialize race variables
     let total_chars = sentence.len();
     let mut player_progress = 0;
     let mut typed_chars = String::new();
@@ -90,10 +111,7 @@ pub fn start_race() -> GameState {
     println!("Your speed: {:.2} WPM", wpm);
     println!("Your accuracy: {:.2}%", accuracy);
 
-    // Save scores
     save_player_score(history_path, top5_path, &player_name, wpm, accuracy);
-
-    // Menu after race
 
     println!("\n1. Play Again");
     println!("2. View Leaderboard");
@@ -101,8 +119,12 @@ pub fn start_race() -> GameState {
     show_main_menu()
 }
 
-
-
+/*
+Calculate Accuracy 
+Calculates the accuracy of the player's typed input compared to the target sentence.
+Params: typed: &str - The player's typed input, target: &str - The target sentence.
+Returns: f64 - The accuracy percentage.
+*/
 pub fn calculate_accuracy(typed: &str, target: &str) -> f64 {
     let typed_words: Vec<&str> = typed.split_whitespace().collect();
     let target_words: Vec<&str> = target.split_whitespace().collect();
@@ -117,6 +139,12 @@ pub fn calculate_accuracy(typed: &str, target: &str) -> f64 {
     (correct_words as f64 / target_words.len() as f64) * 100.0
 }
 
+/*
+Generate Sentence 
+Generates a random sentence from the dictionary file.
+Params: dictionary_path: &str - The path to the dictionary file, word_limit: usize - The number of words in the sentence.
+Returns: String - The generated sentence.
+*/
 pub fn generate_sentence(dictionary_path: &str, word_limit: usize) -> String {
     let words: Vec<String> = fs::read_to_string(dictionary_path)
         .expect("Failed to load dictionary")

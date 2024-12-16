@@ -1,3 +1,7 @@
+/*
+File : Leaderboard.rs
+Purpose: Stores functions related core functions in the game.
+*/ 
 use serde::{Deserialize, Serialize};
 use std::fs::{self, File};
 use std::io::{self, Write};
@@ -7,12 +11,23 @@ use crate::GameState;
 use crate::game::show_main_menu;
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
+
+/*
+Player Struct
+Data structure to store player information
+*/
 pub struct Player {
     pub name: String,
     pub speed: f64,
     pub accuracy: f64,
 }
 
+/*
+Save Player Score
+Saves the player's score to the history and top 5 leaderboard.
+Params: history_path: &str - The path to the history file, top5_path: &str - The path to the top 5 leaderboard file, name: &str - The player's name, wpm: f64 - The player's speed in words per minute, accuracy: f64 - The player's accuracy percentage.
+Returns: None
+*/
 pub fn save_player_score(
     history_path: &str,
     top5_path: &str,
@@ -29,28 +44,29 @@ pub fn save_player_score(
         accuracy,
     };
 
-    // Add the new player's score to history
     history.push(new_player);
 
-    // Save the updated history
     match save_leaderboard(history_path, &history) {
         Ok(_) => println!("History updated successfully!"),
         Err(err) => eprintln!("Failed to save history: {:?}", err),
     }
 
-    // Extract the top 5 players based on accuracy
     let mut top5 = history.clone();
     top5.sort_by(|a, b| b.accuracy.partial_cmp(&a.accuracy).unwrap_or(std::cmp::Ordering::Equal));
     top5.truncate(5);
 
-    // Save the top 5 leaderboard
     match save_leaderboard(top5_path, &top5) {
         Ok(_) => println!("Top 5 leaderboard updated successfully!"),
         Err(err) => eprintln!("Failed to save top 5 leaderboard: {:?}", err),
     }
 }
 
-
+/*
+Load Leaderboard
+Loads the leaderboard from a JSON file.
+Params: file_path: &str - The path to the JSON file.
+Returns: Option<Vec<Player>> - The leaderboard data or None if the file does not exist or is invalid.
+*/
 pub fn load_leaderboard(file_path: &str) -> Option<Vec<Player>> {
     if let Ok(data) = fs::read_to_string(file_path) {
         serde_json::from_str(&data).ok()
@@ -59,11 +75,24 @@ pub fn load_leaderboard(file_path: &str) -> Option<Vec<Player>> {
     }
 }
 
+/*
+Save Leaderboard
+Saves the leaderboard to a JSON file.
+Params: file_path: &str - The path to the JSON file, leaderboard: &[Player] - The leaderboard data.
+Returns: io::Result<()> - The result of the file write operation.
+*/
 pub fn save_leaderboard(file_path: &str, leaderboard: &[Player]) -> io::Result<()> {
     let json = serde_json::to_string_pretty(leaderboard).expect("Failed to serialize leaderboard");
     let mut file = File::create(file_path)?;
     file.write_all(json.as_bytes())
 }
+
+/*
+Show Leaderboard
+Displays the leaderboard and provides options to view full history or top 5 leaderboard.
+Params: None
+Returns: GameState - The next game state based on player choice.
+*/
 pub fn show_leaderboard() -> GameState {
     println!("\n1. View Full History");
     println!("2. View Top 5 Leaderboard");
@@ -94,6 +123,12 @@ pub fn show_leaderboard() -> GameState {
     }
 }
 
+/*
+Display Leaderboard
+Displays the leaderboard from a JSON file.
+Params: path: &str - The path to the JSON file.
+Returns: None
+*/
 pub fn display_leaderboard(path: &str) {
     let leaderboard = load_leaderboard(path).unwrap_or_default();
 
