@@ -65,16 +65,16 @@ Rust:
 
 ## The Good, the Bad, and the Ugly
 **The Good**
+
 Learning Rust's enums, structs, and external crates was a rewarding experience. It felt really good to be able to create an entire interactive game from scratch, complete with moving visuals and multiple features, entirely by myself. This project pushed me to really engage with Rust's capabilities and helped solidify my understanding of the language. 
 **The Bad**
+
 Although not inherently bad, this was my first time using crates, and I realized that anytime I wanted to go beyond Rust's built-in capabilities, I had to incorporate external crates. While crates are powerful and essential, figuring out how to integrate them properly added complexity. Additionally, debugging the program, especially with features like raw mode and input handling, was a tedious and time-consuming process.
 **The Ugly**
+
 Rust's data type precision, while a strength of the language, was a bit of a double-edged sword for me. It was frustrating to constantly ensure that every data type matched exactly, as even a minor mistake would throw errors. I often got lost in figuring out which data types were compatible with others, forcing me to be extra careful and precise throughout the process.
+
 ## Learning Experience
 From this project, I learned a lot about file management in Rust, such as how to read, write, and manage JSON files using external crates like serde. I also gained practical experience in using external crates to extend Rust’s functionality and learned how to structure and manage multiple files in a Rust project effectively. This assignment was a great introduction to building something more complex and hands-on with Rust!
 Understand Rust’s ownership model and its implications in file handling and input management.
-
-Learn how to use external crates like crossterm, serde, and rand effectively.
-
-Build a modular and extensible codebase by separating concerns into different modules (e.g., game, graphics, input).
 
