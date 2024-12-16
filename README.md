@@ -64,13 +64,13 @@ Rust:
 
 
 ## The Good, the Bad, and the Ugly
-**The Good**
+### The Good
 
 Learning Rust's enums, structs, and external crates was a rewarding experience. It felt really good to be able to create an entire interactive game from scratch, complete with moving visuals and multiple features, entirely by myself. This project pushed me to really engage with Rust's capabilities and helped solidify my understanding of the language. 
-**The Bad**
+### The Bad
 
 Although not inherently bad, this was my first time using crates, and I realized that anytime I wanted to go beyond Rust's built-in capabilities, I had to incorporate external crates. While crates are powerful and essential, figuring out how to integrate them properly added complexity. Additionally, debugging the program, especially with features like raw mode and input handling, was a tedious and time-consuming process.
-**The Ugly**
+### The Ugly
 
 Rust's data type precision, while a strength of the language, was a bit of a double-edged sword for me. It was frustrating to constantly ensure that every data type matched exactly, as even a minor mistake would throw errors. I often got lost in figuring out which data types were compatible with others, forcing me to be extra careful and precise throughout the process.
 
