@@ -36,16 +36,22 @@ Select an option by typing the corresponding number:
 ![Picture3](image-2.png)
 ![Picture4](image-3.png)
 ![Picture5](image-4.png)
-**Link to YouTube Video**
+
+## Link to YouTube Video
 https://youtu.be/p8x412F171A
 
-## Specifications
-You will make a program in the Rust programming language. The program will be a game of your choice. The game must not be as simple as Tic-Tac-Toe. Examples of game complexity that are welcome: Battleship, Uno, Texas Hold 'Em Poker, Dungeons and Dragons, Catan, etc. If you are not sure if your game is complex enough, or maybe too complex, feel free to ask your professor to make sure.
+## Data Types
+Enums:
+- GameState: Represents the current state of the game (e.g., MainMenu, Race, Leaderboard, Quit).
 
-Before you start creating your game you will need to study *thoroughly* chapter 6 of the book. The idea is that as you code your game you consciously identify the concepts discussed in that chapter. As you find this concepts in your code you are expected to add comments in the code and make references to the section name from the book.
+Structs:
+- Player: Stores player details such as name, speed, and accuracy.
 
-You will write a **VERY BEAUTIFUL** README file. This file will have the following sections:
+File Handling:
+- JSON files (history.json and top5.json) store game data for persistence.
 
+Collections:
+- Used vectors for track visualization, sentence generation, and leaderboard storage.
 
 
 * Description of your Game
