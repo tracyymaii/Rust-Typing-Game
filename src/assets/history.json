@@ -1,117 +1,38 @@
 [
   {
-    "name": "tracy",
-    "speed": 61.69427101219728,
-    "accuracy": 100.0
+    "name": "BUDDY",
+    "speed": 50.49719648809768,
+    "accuracy": 100.0,
+    "score": 80.19887859523908
   },
   {
-    "name": "tracasfa",
-    "speed": 58.349249723771955,
-    "accuracy": 93.75
+    "name": "APPLE",
+    "speed": 61.386905881245625,
+    "accuracy": 80.0,
+    "score": 72.55476235249824
   },
   {
-    "name": "glass bead",
-    "speed": 53.63836588219127,
-    "accuracy": 91.66666666666666
+    "name": "MAGO",
+    "speed": 33.317741208880584,
+    "accuracy": 100.0,
+    "score": 73.32709648355224
   },
   {
-    "name": "sowon",
-    "speed": 63.06939405058014,
-    "accuracy": 91.66666666666666
+    "name": "FINGERTIP",
+    "speed": 52.66391966949225,
+    "accuracy": 100.0,
+    "score": 81.0655678677969
   },
   {
-    "name": "sojung",
-    "speed": 54.55510200996602,
-    "accuracy": 83.33333333333334
+    "name": "SUMMER RAIN",
+    "speed": 65.2464473231052,
+    "accuracy": 80.0,
+    "score": 74.09857892924208
   },
   {
-    "name": "Tracy Mai",
-    "speed": 21.264651391649423,
-    "accuracy": 83.33333333333334
-  },
-  {
-    "name": "meredith",
-    "speed": 39.31917382730688,
-    "accuracy": 100.0
-  },
-  {
-    "name": "Thien",
-    "speed": 60.37040603021647,
-    "accuracy": 10.0
-  },
-  {
-    "name": "Truc",
-    "speed": 85.98476271984747,
-    "accuracy": 7.142857142857142
-  },
-  {
-    "name": "Tracy Mai",
-    "speed": 40.20301678045472,
-    "accuracy": 91.66666666666666
-  },
-  {
-    "name": "Tracy MAI",
-    "speed": 50.38421748849977,
-    "accuracy": 78.57142857142857
-  },
-  {
-    "name": "MAIIII",
-    "speed": 46.5285643009796,
-    "accuracy": 76.92307692307693
-  },
-  {
-    "name": "aqua",
-    "speed": 42.131136442814274,
-    "accuracy": 100.0
-  },
-  {
-    "name": "klj",
-    "speed": 216.3036661942961,
-    "accuracy": 0.0
-  },
-  {
-    "name": "debbie",
-    "speed": 46.52622003193428,
-    "accuracy": 75.0
-  },
-  {
-    "name": "marie",
-    "speed": 52.25515775788397,
-    "accuracy": 92.3076923076923
-  },
-  {
-    "name": "blah blah blah",
-    "speed": 194.85619066741452,
-    "accuracy": 0.0
-  },
-  {
-    "name": "megan",
-    "speed": 59.900208667485394,
-    "accuracy": 72.72727272727273
-  },
-  {
-    "name": "flappy78",
-    "speed": 49.306878509858585,
-    "accuracy": 90.9090909090909
-  },
-  {
-    "name": "BattleAxe98012",
-    "speed": 62.08668473280825,
-    "accuracy": 92.85714285714286
-  },
-  {
-    "name": "tracy",
-    "speed": 5.244864058014361,
-    "accuracy": 40.0
-  },
-  {
-    "name": "bug72",
-    "speed": 65.56268950161235,
-    "accuracy": 90.0
-  },
-  {
-    "name": "treac",
-    "speed": 204.584053905617,
-    "accuracy": 0.0
+    "name": "rainbow",
+    "speed": 61.236849745858315,
+    "accuracy": 100.0,
+    "score": 84.49473989834333
   }
 ]

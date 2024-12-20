@@ -20,6 +20,7 @@ pub struct Player {
     pub name: String,
     pub speed: f64,
     pub accuracy: f64,
+    pub score: f64,
 }
 
 /*
@@ -35,6 +36,13 @@ pub fn save_player_score(
     wpm: f64,
     accuracy: f64,
 ) {
+
+    // Define weights for accuracy and speed
+    let accuracy_weight = 0.6; // Adjust these weights based on importance
+    let speed_weight = 0.4;
+
+    let score = accuracy_weight * accuracy + speed_weight * wpm;
+
     // Load existing history or initialize a new one
     let mut history = load_leaderboard(history_path).unwrap_or_else(Vec::new);
 
@@ -42,6 +50,7 @@ pub fn save_player_score(
         name: name.to_string(),
         speed: wpm,
         accuracy,
+        score,
     };
 
     history.push(new_player);
@@ -52,7 +61,10 @@ pub fn save_player_score(
     }
 
     let mut top5 = history.clone();
-    top5.sort_by(|a, b| b.accuracy.partial_cmp(&a.accuracy).unwrap_or(std::cmp::Ordering::Equal));
+
+
+    // Sort by combined score
+    top5.sort_by(|a, b| b.score.partial_cmp(&a.score).unwrap_or(std::cmp::Ordering::Equal));
     top5.truncate(5);
 
     match save_leaderboard(top5_path, &top5) {
@@ -135,9 +147,10 @@ pub fn display_leaderboard(path: &str) {
     println!("\nLeaderboard:");
     for (i, player) in leaderboard.iter().enumerate() {
         println!(
-            "{}. {} - Speed: {:.2} WPM, Accuracy: {:.2}%",
+            "{}. {} - Score: {:.2}, Speed: {:.2} WPM, Accuracy: {:.2}%",
             i + 1,
             player.name,
+            player.score,
             player.speed,
             player.accuracy
         );
